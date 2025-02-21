@@ -1,0 +1,1642 @@
+// Sass functions
+@use 'sass:color';
+
+
+// @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+// @import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+// @import "swiper/swiper.min.css";
+// @import "swiper/modules/pagination/pagination.min.css";
+// @import "swiper/modules/navigation/navigation.min.css";
+// @import '~animate.css/animate.css';
+
+
+@import "styles/colors.scss";
+
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    // font-size: 100%;
+    // font: inherit;
+    font-family: "Poppins", serif;
+    vertical-align: baseline;
+
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: normal;
+    overflow-x: hidden;
+    color: $primaryColor;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+* {
+    font-family: "Poppins", serif;
+}
+
+.cont-title {
+    text-align: center;
+    color: rgba(54, 9, 9, 1);
+    font-size: 3.7037vh;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+
+}
+
+.title-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background-image: url('../src/assets/home/Frame.svg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    height: 8vh;
+    width: 40%;
+    z-index: 45;
+    font-weight: 900;
+}
+
+.cont-info-span {
+    text-align: center;
+    color: rgba(54, 9, 9, 1);
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.button {
+    cursor: pointer;
+}
+
+html,
+body {
+    min-height: 100vh;
+    max-width: 100vw;
+}
+
+
+a {
+    transition: 150ms ease-in;
+    color: $primaryColor;
+
+    &:hover {
+        color: color.adjust($color: $secondaryColor, $lightness: 10%);
+    }
+}
+
+a.decoration-link {
+    border-bottom: 1px solid black;
+    padding-bottom: 1px;
+    cursor: pointer;
+
+    &:hover {
+        border-color: color.adjust($color: $secondaryColor, $lightness: 10%);
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+
+    .title-text {
+        width: 60%;
+    }
+}
+
+.color-orange {
+    color: #FF8804;
+}
+
+// span{
+// 	color: rgba(54, 9, 9, 1);
+// }
+button {
+    cursor: pointer;
+}
+
+.cont-flex {
+    display: flex;
+}
+
+// .cont-div-ingredients {
+// 	width: 100%;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// }
+
+
+// .cont-ingredients {
+// 	width: 80%;
+// 	height: 112px;
+// 	border-bottom: 2px solid #FF8804;
+// 	display: flex;
+// 	flex-direction: column;
+// 	align-items: center;
+// 	justify-content: flex-end;
+// 	padding-bottom: 30px;
+
+// 	.letter-ing {
+// 		color: #FF8804;
+// 		text-align: center;
+// 		font-size: 26px;
+// 		font-weight: 700;
+// 	}
+
+// 	.letter-ing-black {
+// 		color: #360909;
+// 		font-size: 20px;
+// 		font-weight: 500;
+// 	}
+// }
+
+
+// * Scroll Style
+// Variables
+$scrollbar-width: 8px;
+$scrollbar-thumb-color-light: #f1f1f1;
+$scrollbar-track-color-light: #555;
+
+// Scrollbar para Webkit (Chrome, Safari, Opera)
+// Variables para colores y tamaño del scrollbar
+$scrollbar-width: 5px;
+$scrollbar-thumb-color: rgba(255, 255, 255, 0.8); // Transparente
+$scrollbar-thumb-hover-color: rgba(255, 255, 255, 1); // Transparente al pasar el mouse
+$scrollbar-track-color: #f1f1f1; // Gris claro
+
+// Estilos generales para todos los elementos que tengan scrollbar
+// Variables para el diseño del scrollbar
+$scrollbar-width: 4px;
+$scrollbar-thumb-color: #888;
+$scrollbar-track-color: #f1f1f1;
+
+// Estilos generales para todos los elementos que tengan scrollbar
+*::-webkit-scrollbar {
+    width: 8px;
+    position: relative;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: rgb(212, 212, 212);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: rgb(170, 170, 170);
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:active {
+    background: rgb(139, 139, 139);
+    border-radius: 10px;
+}
+
+
+// * ----------------------------------------------------------------*
+
+
+
+
+// Botones para regresar al inicio
+.cont-btn-general {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    #scrollToTopBtn {
+        position: fixed;
+        bottom: 65px;
+        right: 20px;
+        z-index: 1000;
+        background-color: $primaryColor;
+        border-radius: 50%;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+    }
+
+    .icon-arrown-white {
+        width: 25px;
+        rotate: -90deg;
+    }
+
+}
+
+
+// * Functions
+// *------------------------------------------------------------* //
+@mixin widthAvailable() {
+    width: -webkit-fill-available;
+    /* Para navegadores basados en WebKit */
+    width: -moz-available;
+    /* Para navegadores basados en Gecko */
+    width: fill-available;
+    /* Propiedad estándar que debería funcionar en la mayoría de los navegadores modernos */
+    width: 100vw;
+    /* Alternativa para un soporte más amplio */
+}
+
+
+
+
+
+
+
+
+// * UTILITIES 
+// *------------------------------------------------------------* //
+// Define breakpoints
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+// Obtienee los px para un query
+@function breakpoint($size) {
+    @return map-get($breakpoints, $size);
+}
+
+// Generate display utilities
+@mixin generate-display-utilities($property, $values) {
+    @each $value in $values {
+        .d-#{$value} {
+            #{$property}: #{$value} !important;
+        }
+
+        @each $breakpoint, $breakpoint-value in $breakpoints {
+            @media (min-width: #{$breakpoint-value}) {
+                .d-#{$breakpoint}-#{$value} {
+                    #{$property}: #{$value} !important;
+                }
+            }
+        }
+    }
+}
+
+// Values for display property
+$display-values: none, inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, inherit;
+
+// Generate classes for display
+@include generate-display-utilities(display, $display-values);
+
+// Flex direction
+$flex-directions: row, row-reverse, column, column-reverse;
+
+@each $dir in $flex-directions {
+    .flex-#{$dir} {
+        flex-direction: #{$dir} !important;
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media (min-width: #{$breakpoint-value}) {
+            .flex-#{$breakpoint}-#{$dir} {
+                flex-direction: #{$dir} !important;
+            }
+        }
+    }
+}
+
+// Justify content
+$justify-contents: start, end, center, space-between, around, evenly;
+
+@each $jc in $justify-contents {
+    .justify-content-#{$jc} {
+        justify-content: #{$jc} !important;
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media (min-width: #{$breakpoint-value}) {
+            .justify-content-#{$breakpoint}-#{$jc} {
+                justify-content: #{$jc} !important;
+            }
+        }
+    }
+}
+
+// Align items
+$align-items: start, end, center, baseline, stretch;
+
+@each $ai in $align-items {
+    .align-items-#{$ai} {
+        align-items: #{$ai} !important;
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media (min-width: #{$breakpoint-value}) {
+            .align-items-#{$breakpoint}-#{$ai} {
+                align-items: #{$ai} !important;
+            }
+        }
+    }
+}
+
+// Align content
+$align-contents: start, end, center, between, around, stretch;
+
+@each $ac in $align-contents {
+    .align-content-#{$ac} {
+        align-content: #{$ac} !important;
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media (min-width: #{$breakpoint-value}) {
+            .align-content-#{$breakpoint}-#{$ac} {
+                align-content: #{$ac} !important;
+            }
+        }
+    }
+}
+
+// Use
+// <div class="d-none">Display oculto</div>
+// <div class="d-lg-none">Display oculto hasta pantallas con breakpoint lg</div>
+
+
+
+
+
+// Generate the display utilities
+@include generate-display-utilities(display, $display-values);
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}
+
+.text-capitalize-first {
+    &::first-letter {
+        text-transform: capitalize;
+    }
+}
+
+.text-italic {
+    font-style: italic;
+}
+
+// *
+
+// * Columnas automaticas
+.columns {
+    // Container
+    width: max-content;
+    display: flex;
+    // grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 0;
+    // Color de texto
+    color: $primaryColor;
+    position: relative; // Posicionamiento de lineas
+
+    .item {
+        // Columnas
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        // Change for large content
+        padding: 10px;
+        column-gap: 30px;
+        width: max-content;
+        height: max-content;
+        // 
+
+        position: relative; // Posicionamiento de lineas
+
+        // Lineas entre columnas
+        &::after {
+            content: "";
+            position: absolute;
+            right: 0;
+            top: auto;
+            bottom: auto;
+            height: 50%;
+            width: 1px;
+            background-color: black;
+            display: block;
+            margin: auto 0;
+        }
+
+        // Remover ultima linea de la ultima columna
+        &:last-child::after {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: breakpoint(xl)) {
+        & {
+            width: 100%;
+            justify-content: center;
+
+            // .item {
+            // 	width: 400px !important;
+            // }
+        }
+    }
+
+    // 992px (lg)
+    @media screen and (max-width: breakpoint(lg)) {
+        & {
+            flex-wrap: wrap;
+            column-gap: 0 !important;
+
+            .item {
+                // Dimensiones
+                flex: 1 1 45%;
+                column-gap: 10px !important;
+                margin-bottom: 20px;
+
+                // Ajustar linea
+                &:nth-child(2n)::after {
+                    display: none !important;
+                }
+            }
+        }
+    }
+
+    // 768px (md)
+    @media screen and (max-width: breakpoint(sm)) {
+        & {
+            flex-wrap: wrap;
+            column-gap: 0 !important;
+
+            .item {
+                // Dimensiones
+                flex: 1 1 100%;
+                column-gap: 10px !important;
+                margin-bottom: 20px;
+
+                /// Ajustar linea
+                &::after {
+                    display: none !important;
+                }
+
+            }
+        }
+    }
+}
+
+
+// * Columnas automaticas con grid, espaciado de 3
+@mixin columns-grid($width-item, $columns, $gap: 10px, $row-gap: $gap, $default-width: 200px) {
+
+    .columns-grid {
+        display: grid;
+
+        @if $width-item =="max-content" {
+            grid-template-columns: repeat(#{$columns}, max-content);
+        }
+
+        @else {
+            grid-template-columns: repeat(#{$columns}, 1fr);
+        }
+
+        gap: $gap;
+        row-gap: $row-gap;
+        width: max-content;
+    }
+
+    .item {
+        aspect-ratio: 1 / 1;
+        width: $width-item;
+    }
+
+    @for $i from $columns through 2 {
+        $media-width: calc($width-item * $i + calc($gap * ($i - 1)));
+
+        @if $width-item =="max-content" {
+            // Calcula sumando cada width de los hijos de .columns-grid o los elementos .item
+            $media-width: calc($default-width * $i + calc($gap * ($i - 1)));
+        }
+
+        @media screen and (max-width: $media-width) {
+            .columns-grid {
+                grid-template-columns: repeat(#{$i - 1}, 1fr);
+            }
+        }
+    }
+}
+
+
+
+// Padding by class
+$spacers: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 1rem,
+    4: 1.5rem,
+    5: 3rem
+);
+
+@mixin generate-spacing-classes($property, $class) {
+    @each $key, $value in $spacers {
+        .#{$class}-#{$key} {
+            #{$property}: #{$value} !important;
+        }
+    }
+}
+
+@include generate-spacing-classes(margin, m);
+@include generate-spacing-classes(padding, p);
+
+@each $key, $value in $spacers {
+    .mt-#{$key} {
+        margin-top: #{$value} !important;
+    }
+
+    .mb-#{$key} {
+        margin-bottom: #{$value} !important;
+    }
+
+    .ms-#{$key} {
+        margin-left: #{$value} !important;
+    }
+
+    .me-#{$key} {
+        margin-right: #{$value} !important;
+    }
+
+    .mx-#{$key} {
+        margin-left: #{$value} !important;
+        margin-right: #{$value} !important;
+    }
+
+    .my-#{$key} {
+        margin-top: #{$value} !important;
+        margin-bottom: #{$value} !important;
+    }
+
+    .pt-#{$key} {
+        padding-top: #{$value} !important;
+    }
+
+    .pb-#{$key} {
+        padding-bottom: #{$value} !important;
+    }
+
+    .ps-#{$key} {
+        padding-left: #{$value} !important;
+    }
+
+    .pe-#{$key} {
+        padding-right: #{$value} !important;
+    }
+
+    .px-#{$key} {
+        padding-left: #{$value} !important;
+        padding-right: #{$value} !important;
+    }
+
+    .py-#{$key} {
+        padding-top: #{$value} !important;
+        padding-bottom: #{$value} !important;
+    }
+}
+
+// Use:
+// <div class="p-3">Padding de 0.75rem en todos los lados</div>
+// <div class="pt-2 pb-4">Padding de 0.5rem en el top y 1rem en el bottom</div>
+// <div class="m-1">Margin de 0.25rem en todos los lados</div>
+// <div class="mx-5 my-0">Margin de 1.25rem en los lados izquierdo y derecho, y 0 en los lados superior e inferior</div>
+
+
+// Gap y espaciado
+$gaps: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 1rem,
+    4: 1.5rem,
+    5: 3rem
+);
+
+@each $key, $value in $gaps {
+    .gap-#{$key} {
+        gap: #{$value} !important;
+    }
+
+    .row-gap-#{$key} {
+        row-gap: #{$value} !important;
+    }
+
+    .column-gap-#{$key} {
+        column-gap: #{$value} !important;
+    }
+}
+
+.gap-content {
+    row-gap: 80px !important;
+}
+
+// Use
+// <div class="d-flex gap-3">
+//   <div>Elemento 1</div>
+//   <div>Elemento 2</div>
+// </div>
+// <div class="row gap-2">
+//   <div class="col">Columna 1</div>
+//   <div class="col">Columna 2</div>
+// </div>
+
+
+
+// width %
+.w-100 {
+    width: 100% !important;
+}
+
+
+
+
+// * -----------------------------------------------------------* //
+
+
+
+
+
+
+
+
+
+
+
+
+// * Class  
+// *------------------------------------------------------------* //
+
+// * Titulos, leyenda y textos de secciones
+// Columna de textos
+.title-container {
+    width: 100%;
+    padding: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .section {
+        max-width: 500px;
+        text-align: center;
+        padding: 0 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        // row-gap: 6px;
+
+
+        .titulo_section {
+            font-size: 18px;
+            font-weight: 600;
+            color: $secondaryColor;
+
+            &.text-white {
+                color: $superiorColor
+            }
+
+            line-height: 11px;
+        }
+
+        .leyenda_section {
+            font-weight: 900;
+            font-size: 40px;
+            line-height: 60px;
+            color: $primaryColor;
+
+            &.text-white {
+                color: $superiorColor
+            }
+        }
+
+        // Linea de titulo
+        .line_section {
+            max-width: 250px;
+            width: 100%;
+            height: 5px;
+            background-color: $secondaryColor;
+            border-radius: 5px;
+            // margin: 2.3vw;
+        }
+
+        .descripcion_section {
+            font-weight: 500;
+            font-size: 17.5px;
+            color: $primaryColor;
+
+            &.text-white {
+                color: $superiorColor
+            }
+
+            // line-height: 40px;
+            margin: 20px 0;
+        }
+
+        .only-title {
+            font-size: 30px;
+            font-weight: 600;
+            text-align: center;
+        }
+
+
+        @media screen and (max-width: breakpoint(md)) {
+            .titulo_section {
+                font-size: 16px;
+            }
+
+            .leyenda_section {
+                font-size: 33px;
+            }
+        }
+    }
+}
+
+
+// * Botones
+@mixin btn($color: $superiorColor, $backgroundColor: white) {
+    width: max-content;
+    height: max-content;
+    padding: 12px 20px;
+    border-radius: 100px;
+    font-size: 17.5px;
+    font-weight: 500;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3sease;
+
+    background-color: $backgroundColor;
+    border: 0;
+    color: $color;
+
+    span {
+        padding-right: 2.875em;
+        /* Cambiado a unidades relativas */
+        transition: padding-right 0.4s ease;
+    }
+
+
+}
+
+// Botones
+@mixin btn-outline($color: $primaryColor, $line: 0) {
+    background-color: transparent !important;
+    border: 2px solid $color !important;
+    // padding: 16px 26px !important;
+
+    img {
+        height: 0.875em;
+        /* Cambiado a unidades relativas */
+        width: auto;
+        filter: brightness($line);
+    }
+
+    &:hover {
+        span {
+            padding-right: 3.75em;
+            /* Cambiado a unidades relativas */
+        }
+    }
+
+    // mobile
+    @media (max-width: breakpoint(sm)) {
+        .btn-outline {
+            font-size: 0.75rem;
+            padding: 12px 20px;
+        }
+    }
+
+    @include btn($color);
+
+}
+
+.btn-outline-white {
+    @include btn-outline(white, 100)
+}
+
+.btn-outline {
+    @include btn-outline($primaryColor, 0)
+}
+
+.btn-transparent {
+    @include btn(white, $transparentButton)
+}
+
+.btn {
+    @include btn($primaryColor)
+}
+
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    width: 100%;
+}
+
+
+
+// * Mat Styles
+// *---------------------------------------------------------------*//
+::ng-deep {
+    .mat-dialog-container {
+        border-radius: 20px !important;
+        height: unset !important;
+        background-color: white !important;
+    }
+
+    // Para centrar idiomas o mas
+    .mat-select,
+    mat-select {
+        align-content: center;
+    }
+
+
+
+
+    // Modificaciones del modal
+    .cdk-overlay-pane {
+        @media screen and (max-width: breakpoint(md)) {
+            max-width: 100% !important;
+        }
+
+        .mat-dialog-container {
+            padding: 0 !important;
+        }
+    }
+}
+
+::ng-deep .my-pagination {
+
+    // display: none;
+
+
+    .ngx-pagination .pagination-next a:after,
+    .ngx-pagination .pagination-next.disabled:after,
+    .ngx-pagination .pagination-previous a:before,
+    .ngx-pagination .pagination-previous.disabled:before {
+        color: $secondaryColor;
+        font-size: 11px;
+    }
+
+    .ngx-pagination .pagination-previous a:before,
+    .ngx-pagination .pagination-previous.disabled:before {
+        content: "\25c0" !important;
+    }
+
+    .ngx-pagination .pagination-next a:after,
+    .ngx-pagination .pagination-next.disabled:after {
+        content: "\25b6" !important;
+    }
+
+
+    ul.ngx-pagination {
+        width: max-content;
+        padding: 0;
+        margin: 0 auto;
+        color: $secondaryColor;
+
+        .ngx-pagination a,
+        .ngx-pagination button {
+            color: $primaryColor;
+        }
+
+        .current {
+            background: transparent;
+            color: $secondaryColor;
+            border-radius: 5px;
+        }
+    }
+}
+
+// *---------------------------------------------------------------*//
+
+// *input
+.mat-input {
+    font-size: 16px;
+    // max-height: 52px;
+
+    .mat-form-field-ripple {
+        width: 0% !important;
+    }
+
+    .mat-form-field-flex {
+        background-color: $superiorColor;
+        border-radius: 100px !important;
+        padding: 8px 28px 0 28px !important;
+    }
+
+
+    &.mat-focused {
+        .mat-form-field-label {
+            color: $primaryColor !important
+        }
+    }
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 0s 600000s, color 0s 600000s !important;
+}
+
+
+
+// Cuadrado de recetas
+.card-products-slider {
+    width: 22rem;
+    height: 22rem;
+    // height: 100%;
+    // border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    background-size: 100% 100%;
+    background-position: center;
+    transition: background-size 0.5s ease, transform 0.5s ease;
+    background-color: rgba(0, 0, 0, 0.15) !important;
+
+
+    &:hover {
+        background-size: 110% 110%;
+    }
+
+    .recipe-image-container {
+        width: 100%;
+        height: 50%;
+        background: transparent;
+        // border-radius: 10px 10px 0 0;
+        // background: rgba(0, 0, 0, 0.50);
+    }
+
+    .recipe-details-container {
+        width: 100%;
+        height: 50%;
+        // border-radius: 0 0 10px 10px;
+        // background-color: #360909;
+        // background: rgba(0, 0, 0, 0.50);
+        transition: 0.5s ease all;
+
+    }
+}
+
+// * Recipes content
+.recipe-content {
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 20px;
+    color: #FFF;
+    transition: 0.5s ease all;
+
+    row-gap: 11px;
+
+    .recipe-name {
+        font-size: 20px;
+    }
+
+    .recipe-difficulty {
+        display: flex;
+        align-items: center;
+        font-weight: 500;
+        row-gap: 10px;
+
+        .difficulty-label {
+            margin-right: 1vh;
+        }
+
+        .recipe-icon {
+            display: flex;
+            margin-right: 0.5vh;
+            transition: 0.5s ease all;
+        }
+    }
+
+    .recipe-time {
+        font-weight: 600;
+        width: 100%;
+        display: flex;
+        gap: 10px;
+
+        .time-container {
+            display: flex;
+            align-items: center;
+            height: max-content;
+            gap: 3px;
+
+            .recipe-icon {
+                line-height: 0;
+                width: 14px !important;
+                height: 14px !important;
+            }
+
+            .time-label {
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+
+
+// * Banner de paginas * //
+// Tabla base de portadas
+.tabletBase {
+    height: 280px;
+    width: 100%;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("/assets/tablet.webp");
+
+    @media screen and (max-width: breakpoint(lg)) {
+        height: 200px;
+    }
+
+    @media screen and (min-width: breakpoint(xxl)) {
+        height: 350px;
+    }
+}
+
+// Banner de portada de cada pagina
+.headerPage {
+    // height: 80vh;
+    min-height: 300px;
+    /* max-height: 750px; */
+    background-color: #FFF9F2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 271px 0 0 0;
+    flex-wrap: wrap;
+
+    // Section de presentación de paginas
+    .presentationPage {
+        max-width: 1200px;
+        width: 100%;
+        height: 100%;
+        min-height: 300px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        /* overflow: hidden; */
+        flex-wrap: wrap;
+
+        // Presentacion de titulos
+        .containerTitles {
+            min-width: 380px;
+            max-width: 380px;
+            height: max-content;
+
+            display: grid;
+            grid-template-areas:
+                "nothing breadcrumb"
+                "backPage information";
+            grid-gap: 10px;
+            gap: 10px;
+
+            font-size: 18px;
+
+            @media screen and (max-width: breakpoint(lg)) {
+                max-width: 350px !important;
+            }
+
+            // Cuadriculas
+            .space {
+                // Grid names
+                grid-area: 'nothing';
+                // width: ;
+            }
+
+            .vinculo {
+                // Grid names
+                grid-area: 'breadcrumb';
+                text-decoration: none;
+
+                a {
+                    font-weight: 500;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+            }
+
+            .backPage {
+                // Grid names
+                grid-area: 'backPage';
+            }
+
+            .information {
+                // Grid names
+                grid-area: 'information';
+                font-weight: 700;
+                padding-right: 9px;
+                min-width: 340px;
+
+                .title {
+                    // Text
+                    font-size: 29px !important;
+                    padding-bottom: 15px;
+
+                    .diference {
+                        color: $secondaryColor;
+                    }
+                }
+
+                .description:not(span) {
+                    font-weight: 500;
+                    // min-width: none;
+                    min-height: 50px;
+                }
+
+            }
+
+        }
+
+        // Banner de imagen
+        .bannerPage {
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+
+            // Dimensiones
+            height: auto;
+            min-height: 435px;
+            max-height: 438px;
+
+            // width: 50vw;
+            width: 100%;
+            max-width: 460px;
+
+            // Shape svg
+            background-image: url(/assets/family/SHAPE.svg);
+            background-size: 100%;
+            background-position-x: center;
+            background-repeat: no-repeat;
+            background-position-y: 4.5rem;
+
+            @media screen and (max-width: 900px) {
+                width: 450px;
+            }
+
+            @media screen and (max-width: breakpoint(lg)) {
+                // background-size: 82% !important;
+                background-position-y: 2.5rem !important;
+
+                min-height: 308px;
+                max-height: 310px;
+            }
+
+            // Imagenes en generales
+            img {
+                width: 650px;
+                height: auto;
+
+                @media screen and (max-width: breakpoint(lg)) {
+                    width: 100%;
+                }
+
+            }
+
+            // Mas contenido sobresaliente
+            .contentImage {
+                padding: 3.4rem 0 0 0;
+                // Longitud del objeto principal
+                width: 435px;
+                // Altura maxima
+                height: 435px;
+                max-height: 435px;
+                // posicionamiento de los objetos como absoluta
+                position: relative;
+
+                @media screen and (max-width: breakpoint(lg)) {
+                    padding: 1.4rem 0 0 0;
+                    width: 349px !important;
+                    height: 349px !important;
+                    max-height: 349px !important;
+                }
+
+                // Producto principal
+                .productoImg {
+                    // Tamaño adaptivo al container
+                    width: auto;
+                    height: 92%;
+                    z-index: 1;
+
+                    // Layout en posicion
+                    position: absolute;
+                    // Centra el producto en medio
+                    left: 50%;
+                    bottom: 0;
+                    transform: translate(-50%);
+                }
+
+
+                // Items
+                .items {
+                    // Tamaño adaptivo al container
+                    width: 35%;
+                    height: auto;
+
+                    // Posicion
+                    position: absolute;
+
+                    // Posicionamiento individual
+                    &.item_left {
+                        top: 50%;
+                        transform: translate(-36%, -40%);
+                    }
+
+                    &.item_right {
+                        top: 0;
+                        right: 0;
+                        transform: translate(34%, 50%);
+
+                    }
+
+
+                    &.item-prevto {
+                        width: 45px;
+                        height: auto;
+                        top: 50%;
+                        transform: translate(0, -50%);
+                    }
+
+                    &.item-nexto {
+                        width: 45px;
+                        height: auto;
+                        top: 50%;
+                        right: 0;
+                        transform: translate(0, -50%);
+                    }
+
+                    &.item-prevto,
+                    &.item-nexto {
+                        transition: all 0.5s ease;
+                        border-radius: 50%;
+                        z-index: 2;
+
+                        &:hover {
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                        }
+
+                        &:active {
+                            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                            transform: translate(0, -30%);
+                        }
+                    }
+
+
+
+                }
+
+
+                // Segundo objecto
+                .secondObject {
+                    // Tamaño adaptivo al container
+                    width: 56%;
+                    height: auto;
+                    z-index: 1;
+
+                    // Posicion
+                    position: absolute;
+                    transform: translate(-16%, 29%);
+                    bottom: 0;
+                }
+
+
+                // Sombra base del producto
+                .shadow_product {
+                    // Tamaño adaptivo al container
+                    width: 230%;
+                    height: 100px;
+                    border-radius: 100%;
+                    z-index: 0;
+
+                    filter: blur(24px);
+                    background: radial-gradient(circle,
+                            #210e03 14%,
+                            rgb(113 113 113 / 0%) 100%,
+                            rgb(255 255 255 / 0%) 100%);
+
+                    // Posicion
+                    position: absolute;
+                    bottom: 0;
+                    transform: translate(-32%, 47%);
+
+
+                    @media screen and (max-width: breakpoint(lg)) {
+                        background: radial-gradient(circle,
+                                #210e03 0%,
+                                rgb(113 113 113 / 0%) 100%,
+                                rgb(255 255 255 / 0%) 100%);
+                    }
+                }
+
+            }
+
+        }
+    }
+
+}
+
+// *------------------------------------------------------------* //
+
+
+// Divisor con puntos
+#line {
+    background-color: $primaryColor;
+    width: 2px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+
+    .circle {
+        background: $primaryColor;
+        border-radius: 100%;
+        width: 8px;
+        height: 8px;
+    }
+}
+
+
+// Genera una pequeña animación para cada tarjeta al aparecer
+.fade-in {
+    opacity: 0;
+    animation: fadeInAnimation 0.6s ease-out forwards;
+    transition: 200ms ease-in;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+// Estilo de modales y titulos
+.modalInformation {
+    width: 100%;
+    height: 100%;
+
+    // Familia de texto
+    * {
+        fill: $primaryColor !important;
+    }
+
+    // Contenido
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 65px 3rem 0;
+    box-sizing: border-box;
+
+
+    // Encabezado
+    .headerModal {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        // height: 145px !important;
+        padding-bottom: 22px;
+
+        .titleModal {
+            border-bottom: 2px solid $secondaryColor;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            // Espaciado
+            row-gap: 5px;
+            padding-bottom: 20px;
+            width: 100%;
+            // Dimensiones
+            position: relative;
+
+
+            // Titulos
+            .modalName {
+                color: $secondaryColor;
+                text-align: center;
+                font-size: 26px;
+                font-weight: 700;
+            }
+
+            .modalSubName {
+                color: #360909;
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            .btnClose {
+                position: absolute;
+                top: -40px;
+                right: -20px;
+                cursor: pointer;
+
+                mat-icon {
+                    width: 18px !important;
+                    height: 18px !important;
+                }
+
+
+
+                ::ng-deep {
+                    path {
+                        fill: $primaryColor !important;
+                    }
+                }
+            }
+        }
+
+    }
+
+
+
+    .textModal {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 22px;
+
+        // Texto
+        text-align: justify;
+
+        p {
+            color: $primaryColor;
+            font-size: 14px;
+            font-weight: normal;
+            line-height: 21px;
+        }
+
+        h4 {
+            color: $primaryColor;
+            font-size: 16px;
+            font-weight: 700;
+        }
+    }
+
+
+
+}
+
+// *------------------------------------------------------------* //
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+}

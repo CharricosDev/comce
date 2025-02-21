@@ -1,0 +1,102 @@
+@import '../../../../styles/colors.scss';
+
+
+
+// Longitud/historia
+#long_history {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .columns {
+
+        .item {
+            padding: 10px;
+            column-gap: 30px;
+            width: 250px;
+
+            // Imagen
+            .img {
+                // Dimensiones
+                background-color: $primaryColor;
+                border-radius: 50%;
+                text-align: center;
+                // align-content: center;
+                display: flex;
+                justify-content: center;
+                // Tamaño
+                width: 70px;
+                height: 70px;
+
+                img {
+                    width: 60%;
+                    height: auto;
+                }
+
+
+            }
+
+            // Cambio dee color
+            &:nth-child(2n+2) {
+                color: $secondaryColor !important;
+
+                .img {
+                    background-color: $secondaryColor;
+                }
+            }
+
+            // texto
+            .text {
+                display: grid;
+
+
+                .title {
+                    font-size: 19pt;
+                    font-weight: 700;
+                    line-height: 40px;
+
+                }
+
+                .description {
+                    font-size: 12pt;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+
+    // 
+    @media screen and (min-width: 1250px) {
+        .columns {
+
+
+            .item {
+
+
+                .img {
+                    width: 83px;
+                    height: 83px;
+                }
+
+                .text {
+                    .title {
+                        font-size: 21.5pt;
+                    }
+
+                    .description {
+                        font-size: 13pt;
+                    }
+                }
+            }
+        }
+    }
+
+    // 768px (md)
+    @media screen and (max-width: breakpoint(sm)) {
+        .columns .item .text {
+            width: 145px;
+        }
+
+    }
+}
