@@ -16,6 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { HttpClientModule } from '@angular/common/http';
 import { ExperienceComponent } from './home/components/experience/experience.component';
+import { AboutUsComponent } from './home/components/about-us/about-us.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { ExperienceComponent } from './home/components/experience/experience.com
     HomeComponent,
     HeaderComponent,
     ExperienceComponent,
+    AboutUsComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

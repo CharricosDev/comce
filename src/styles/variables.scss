@@ -1,0 +1,373 @@
+// * Scroll Style
+// Variables
+$scrollbar-width: 8px;
+$scrollbar-thumb-color-light: #f1f1f1;
+$scrollbar-track-color-light: #555;
+
+// Scrollbar para Webkit (Chrome, Safari, Opera)
+// Variables para colores y tamaño del scrollbar
+$scrollbar-width: 5px;
+$scrollbar-thumb-color: rgba(255, 255, 255, 0.8); // Transparente
+$scrollbar-thumb-hover-color: rgba(255, 255, 255, 1); // Transparente al pasar el mouse
+$scrollbar-track-color: #f1f1f1; // Gris claro
+
+// Estilos generales para todos los elementos que tengan scrollbar
+// Variables para el diseño del scrollbar
+$scrollbar-width: 4px;
+$scrollbar-thumb-color: #888;
+$scrollbar-track-color: #f1f1f1;
+
+// * Functions
+// *------------------------------------------------------------* //
+@mixin widthAvailable() {
+    width: -webkit-fill-available;
+    /* Para navegadores basados en WebKit */
+    width: -moz-available;
+    /* Para navegadores basados en Gecko */
+    width: fill-available;
+    /* Propiedad estándar que debería funcionar en la mayoría de los navegadores modernos */
+    width: 100vw;
+    /* Alternativa para un soporte más amplio */
+}
+
+
+// * UTILITIES 
+// *------------------------------------------------------------* //
+// Define breakpoints
+$breakpoints: (
+    sm: 576px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px,
+    xxl: 1400px
+);
+
+// Obtienee los px para un query
+@function breakpoint($size) {
+    @return map-get($breakpoints, $size);
+}
+
+// Generate display utilities
+@mixin generate-display-utilities($property, $values) {
+    @each $value in $values {
+        .d-#{$value} {
+            #{$property}: #{$value} !important;
+        }
+
+        @each $breakpoint, $breakpoint-value in $breakpoints {
+            @media (min-width: #{$breakpoint-value}) {
+                .d-#{$breakpoint}-#{$value} {
+                    #{$property}: #{$value} !important;
+                }
+            }
+        }
+    }
+}
+
+// Values for display property
+$display-values: none, inline, inline-block, block, grid, table, table-row, table-cell, flex, inline-flex, inherit;
+
+// Generate classes for display
+@include generate-display-utilities(display, $display-values);
+
+// Flex direction
+$flex-directions: row, row-reverse, column, column-reverse;
+
+@each $dir in $flex-directions {
+    .flex-#{$dir} {
+        flex-direction: #{$dir} !important;
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media (min-width: #{$breakpoint-value}) {
+            .flex-#{$breakpoint}-#{$dir} {
+                flex-direction: #{$dir} !important;
+            }
+        }
+    }
+}
+
+// Justify content
+$justify-contents: start, end, center, space-between, around, evenly;
+
+@each $jc in $justify-contents {
+    .justify-content-#{$jc} {
+        justify-content: #{$jc} !important;
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media (min-width: #{$breakpoint-value}) {
+            .justify-content-#{$breakpoint}-#{$jc} {
+                justify-content: #{$jc} !important;
+            }
+        }
+    }
+}
+
+// Align items
+$align-items: start, end, center, baseline, stretch;
+
+@each $ai in $align-items {
+    .align-items-#{$ai} {
+        align-items: #{$ai} !important;
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media (min-width: #{$breakpoint-value}) {
+            .align-items-#{$breakpoint}-#{$ai} {
+                align-items: #{$ai} !important;
+            }
+        }
+    }
+}
+
+// Align content
+$align-contents: start, end, center, between, around, stretch;
+
+@each $ac in $align-contents {
+    .align-content-#{$ac} {
+        align-content: #{$ac} !important;
+    }
+
+    @each $breakpoint, $breakpoint-value in $breakpoints {
+        @media (min-width: #{$breakpoint-value}) {
+            .align-content-#{$breakpoint}-#{$ac} {
+                align-content: #{$ac} !important;
+            }
+        }
+    }
+}
+
+// Use
+// <div class="d-none">Display oculto</div>
+// <div class="d-lg-none">Display oculto hasta pantallas con breakpoint lg</div>
+
+
+// Generate the display utilities
+@include generate-display-utilities(display, $display-values);
+
+
+
+// * Columnas automaticas con grid, espaciado de 3
+@mixin columns-grid($width-item, $columns, $gap: 10px, $row-gap: $gap, $default-width: 200px) {
+
+    .columns-grid {
+        display: grid;
+
+        @if $width-item =="max-content" {
+            grid-template-columns: repeat(#{$columns}, max-content);
+        }
+
+        @else {
+            grid-template-columns: repeat(#{$columns}, 1fr);
+        }
+
+        gap: $gap;
+        row-gap: $row-gap;
+        width: max-content;
+    }
+
+    .item {
+        aspect-ratio: 1 / 1;
+        width: $width-item;
+    }
+
+    @for $i from $columns through 2 {
+        $media-width: calc($width-item * $i + calc($gap * ($i - 1)));
+
+        @if $width-item =="max-content" {
+            // Calcula sumando cada width de los hijos de .columns-grid o los elementos .item
+            $media-width: calc($default-width * $i + calc($gap * ($i - 1)));
+        }
+
+        @media screen and (max-width: $media-width) {
+            .columns-grid {
+                grid-template-columns: repeat(#{$i - 1}, 1fr);
+            }
+        }
+    }
+}
+
+
+
+// Padding by class
+$spacers: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 1rem,
+    4: 1.5rem,
+    5: 3rem
+);
+
+@mixin generate-spacing-classes($property, $class) {
+    @each $key, $value in $spacers {
+        .#{$class}-#{$key} {
+            #{$property}: #{$value} !important;
+        }
+    }
+}
+
+@include generate-spacing-classes(margin, m);
+@include generate-spacing-classes(padding, p);
+
+@each $key, $value in $spacers {
+    .mt-#{$key} {
+        margin-top: #{$value} !important;
+    }
+
+    .mb-#{$key} {
+        margin-bottom: #{$value} !important;
+    }
+
+    .ms-#{$key} {
+        margin-left: #{$value} !important;
+    }
+
+    .me-#{$key} {
+        margin-right: #{$value} !important;
+    }
+
+    .mx-#{$key} {
+        margin-left: #{$value} !important;
+        margin-right: #{$value} !important;
+    }
+
+    .my-#{$key} {
+        margin-top: #{$value} !important;
+        margin-bottom: #{$value} !important;
+    }
+
+    .pt-#{$key} {
+        padding-top: #{$value} !important;
+    }
+
+    .pb-#{$key} {
+        padding-bottom: #{$value} !important;
+    }
+
+    .ps-#{$key} {
+        padding-left: #{$value} !important;
+    }
+
+    .pe-#{$key} {
+        padding-right: #{$value} !important;
+    }
+
+    .px-#{$key} {
+        padding-left: #{$value} !important;
+        padding-right: #{$value} !important;
+    }
+
+    .py-#{$key} {
+        padding-top: #{$value} !important;
+        padding-bottom: #{$value} !important;
+    }
+}
+
+// Use:
+// <div class="p-3">Padding de 0.75rem en todos los lados</div>
+// <div class="pt-2 pb-4">Padding de 0.5rem en el top y 1rem en el bottom</div>
+// <div class="m-1">Margin de 0.25rem en todos los lados</div>
+// <div class="mx-5 my-0">Margin de 1.25rem en los lados izquierdo y derecho, y 0 en los lados superior e inferior</div>
+
+
+// Gap y espaciado
+$gaps: (
+    0: 0,
+    1: 0.25rem,
+    2: 0.5rem,
+    3: 1rem,
+    4: 1.5rem,
+    5: 3rem
+);
+
+@each $key, $value in $gaps {
+    .gap-#{$key} {
+        gap: #{$value} !important;
+    }
+
+    .row-gap-#{$key} {
+        row-gap: #{$value} !important;
+    }
+
+    .column-gap-#{$key} {
+        column-gap: #{$value} !important;
+    }
+}
+
+.gap-content {
+    row-gap: 80px !important;
+}
+
+// Use
+// <div class="d-flex gap-3">
+//   <div>Elemento 1</div>
+//   <div>Elemento 2</div>
+// </div>
+// <div class="row gap-2">
+//   <div class="col">Columna 1</div>
+//   <div class="col">Columna 2</div>
+// </div>
+
+
+
+// * Botones
+@mixin btn($color: $superiorColor, $backgroundColor: white) {
+    width: max-content;
+    height: max-content;
+    padding: 12px 20px;
+    border-radius: 100px;
+    font-size: 17.5px;
+    font-weight: 500;
+    text-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3sease;
+
+    background-color: $backgroundColor;
+    border: 0;
+    color: $color;
+
+    span {
+        padding-right: 2.875em;
+        /* Cambiado a unidades relativas */
+        transition: padding-right 0.4s ease;
+    }
+
+
+}
+
+// Botones
+@mixin btn-outline($color: $primaryColor, $line: 0) {
+    background-color: transparent !important;
+    border: 2px solid $color !important;
+    // padding: 16px 26px !important;
+
+    img {
+        height: 0.875em;
+        /* Cambiado a unidades relativas */
+        width: auto;
+        filter: brightness($line);
+    }
+
+    &:hover {
+        span {
+            padding-right: 3.75em;
+            /* Cambiado a unidades relativas */
+        }
+    }
+
+    // mobile
+    @media (max-width: breakpoint(sm)) {
+        .btn-outline {
+            font-size: 0.75rem;
+            padding: 12px 20px;
+        }
+    }
+
+    @include btn($color);
+
+}

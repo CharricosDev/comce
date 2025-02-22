@@ -1,5 +1,5 @@
 @import '../../../../styles/colors.scss';
-
+@import '../../../../styles/variables.scss';
 
 
 // Longitud/historia
@@ -12,8 +12,8 @@
     .columns {
 
         .item {
-            padding: 10px;
-            column-gap: 30px;
+            padding: 10px 20px;
+            column-gap: 15px !important;
             width: 250px;
 
             // Imagen
@@ -21,10 +21,9 @@
                 // Dimensiones
                 background-color: $primaryColor;
                 border-radius: 50%;
-                text-align: center;
-                // align-content: center;
                 display: flex;
                 justify-content: center;
+                align-items: center;
                 // Tamaño
                 width: 70px;
                 height: 70px;
@@ -37,66 +36,50 @@
 
             }
 
-            // Cambio dee color
-            &:nth-child(2n+2) {
-                color: $secondaryColor !important;
 
-                .img {
-                    background-color: $secondaryColor;
-                }
-            }
 
             // texto
             .text {
                 display: grid;
-
+                width: 160px;
 
                 .title {
-                    font-size: 19pt;
-                    font-weight: 700;
+                    font-size: 16pt;
+                    font-weight: 500;
                     line-height: 40px;
 
                 }
 
                 .description {
-                    font-size: 12pt;
-                    font-weight: 500;
+                    font-size: 16pt;
+                    font-weight: 600;
                 }
             }
         }
     }
 
-    // 
-    @media screen and (min-width: 1250px) {
-        .columns {
+    @media screen and (max-width: 1200px) {
 
+        .columns {
+            flex-wrap: wrap;
+            column-gap: 0 !important;
 
             .item {
-
-
-                .img {
-                    width: 83px;
-                    height: 83px;
-                }
-
-                .text {
-                    .title {
-                        font-size: 21.5pt;
-                    }
-
-                    .description {
-                        font-size: 13pt;
-                    }
-                }
+                flex: 1 1 45%;
+                column-gap: 15px !important;
+                margin-bottom: 20px;
             }
         }
-    }
 
-    // 768px (md)
-    @media screen and (max-width: breakpoint(sm)) {
-        .columns .item .text {
-            width: 145px;
+        .columns .item:nth-child(2)::after {
+            content: none;
         }
-
     }
+
+    @media screen and (max-width: 802px) {
+        .columns .item::after {
+            content: none;
+        }
+    }
+
 }

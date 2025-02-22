@@ -1,0 +1,229 @@
+@import "../../../../styles/colors.scss";
+@import '../../../../styles/variables.scss';
+
+#ourFamily {
+    // height: 600px;
+    width: auto;
+    display: flex;
+    justify-content: center;
+
+    .container-family {
+        // max-width: 1440px;
+        display: flex;
+        width: 100%;
+        color: $superiorColor !important;
+
+        // información
+        .ourFamily {
+            background-image: url("../../../../assets/about-us/background_banner.png");
+            background-color: $backgroundDarkBlue;
+            background-position-y: bottom;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            width: 50%; // Mitad de columna
+            max-height: 600px;
+
+            color: $superiorColor !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            overflow: hidden;
+            position: relative;
+
+            .leyenda {
+                max-width: 80%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                row-gap: 1rem;
+
+                .aboutLine {
+                    width: max-content;
+                    background-color: $backgroundIndigo;
+                    border-radius: 20px;
+                    border: none;
+                    padding: 5.3px 39px;
+                    font-size: 20px;
+                    margin: 0px;
+                }
+
+                .title {
+                    font-size: 23pt;
+                    line-height: 65px;
+                    font-weight: 800;
+                    word-spacing: 5px;
+                    margin: 0px;
+                    margin-bottom: 5px;
+                    /* text-align: center; */
+                    row-gap: 10px;
+                    /* justify-items: center; */
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    font-family: "Raleway", serif;
+
+                }
+
+                .description {
+                    font-size: 12pt;
+                    font-weight: 400;
+                    word-spacing: 3px;
+                    line-height: 22px;
+                    text-align: justify;
+                    width: 80%;
+                }
+
+                .line {
+                    width: 12vw;
+                    height: 0.4vw;
+                    background-color: $backgroundIndigo;
+                    border-radius: 5px;
+                    // margin: 2.3vw;
+                }
+            }
+
+            @media screen and (max-width: breakpoint(xl)) {
+                & {
+                    .leyenda {
+                        .description {
+                            font-size: 11pt;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: breakpoint(lg)) {
+                & {
+                    width: 100%;
+                    height: 600px;
+
+                    img:first-child {
+                        width: 100%;
+                        height: auto;
+                        opacity: 0.5;
+                        transition: 700ms ease-in-out;
+
+                        &:hover {
+                            transform: scale(104%);
+                        }
+                    }
+
+                    .leyenda {
+                        position: absolute;
+
+                        .title {
+                            font-size: 24pt;
+                            line-height: 70px;
+                        }
+
+                        .description {
+                            line-height: normal;
+                            font-size: 14pt;
+                            width: 90%;
+                        }
+
+                        .line {
+                            width: 37vw;
+                            height: 0.9vw;
+                            // margin: 2.9vw;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: breakpoint(md)) {
+                & {
+                    .leyenda {
+
+                        .title {
+                            font-size: 17pt;
+                            word-spacing: normal;
+                            line-height: 50px;
+                        }
+
+                        .description {
+                            font-size: 11pt;
+                            word-spacing: normal;
+                            line-height: 22px;
+                        }
+                    }
+
+
+
+                }
+            }
+
+
+        }
+
+        .family {
+            width: 50%; // Mitad de columna
+            background-color: black;
+
+            overflow: hidden;
+            position: relative;
+
+            img {
+                width: 100%;
+                max-height: 600px;
+                object-fit: cover;
+                object-position: center;
+                transition: 700ms ease-in-out;
+            }
+
+
+            // ! Texto dee mas
+            // .ad,
+            // .ad_2 {
+            //     background-color: $secondaryColor;
+            //     color: $superiorColor;
+            //     font-size: 2.5vw;
+            //     font-weight: 900;
+            //     z-index: 2;
+            //     position: absolute;
+            //     /* top: 0; */
+            //     transition: 700ms ease-in-out;
+
+
+            // }
+
+            // .ad {
+            //     left: 8.2%;
+            //     bottom: 21%;
+            //     padding: 13.5px 23px;
+            // }
+
+            // .ad_2 {
+            //     left: 8.2%;
+            //     bottom: 10.8%;
+            //     padding: 13.5px 23px;
+            // }
+
+            &:hover {
+
+                img {
+                    opacity: 0.7;
+                    transform: scale(104%);
+                }
+
+                //     .ad {
+                //         left: 6.56%;
+                //         bottom: 19.9%;
+                //         font-size: 2.63vw;
+                //     }
+
+                //     .ad_2 {
+                //         left: 6.56%;
+                //         bottom: 9.3%;
+                //         font-size: 2.63vw;
+                //     }
+            }
+
+            // !
+        }
+    }
+}

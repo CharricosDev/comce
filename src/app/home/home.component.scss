@@ -3,8 +3,12 @@
 #homePage {
 
     .bannerMain {
-        height: 600px;
+        height: auto;
         width: 100%;
 
+        img {
+            width: 100%;
+            height: auto;
+        }
     }
 }

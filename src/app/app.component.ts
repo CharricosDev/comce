@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
 import { Icons } from '../assets/icons/custom';
@@ -30,5 +30,20 @@ export class AppComponent {
         )
       );
     });
+  }
+
+  // Scroll buttons
+  overTheTop = false;
+  scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
+  // Detect Scrolling window for height (500px)
+  @HostListener('window:scroll', ['$event'])
+  onScroll() {
+    this.overTheTop = window.pageYOffset > 500;
   }
 }
