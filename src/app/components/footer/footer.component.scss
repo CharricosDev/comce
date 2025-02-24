@@ -1,0 +1,155 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/variables.scss';
+
+#footerHome {
+    background-color: $backgroundDarkBlue;
+    color: white;
+
+    .footerContent {
+        width: 100%;
+        min-height: 700px;
+        background: url('../../../assets/footer/background.png');
+        background-size: cover;
+        background-position: left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+        // padding: 20px 0;
+
+        .footerContactanos {
+            max-width: 1200px;
+            width: 85%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            column-gap: 25px;
+            margin-top: 20px;
+
+            .information {
+                max-width: 400px;
+                margin-top: 24px;
+
+                flex: 1 1 25%;
+
+                h2 {
+                    font-size: 40px;
+                    font-weight: 700;
+                    line-height: 46.96px;
+                    font-family: 'Raleway', sans-serif;
+                }
+
+                .contact-info {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    div {
+                        height: 80px;
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        gap: 10px;
+
+                        mat-icon {
+                            margin: 10px;
+                        }
+
+                        p {
+                            max-width: 80%;
+                            margin: 0px;
+                            font-size: 18px;
+                            line-height: 24px;
+                        }
+                    }
+                }
+
+                .contact-icons {
+                    display: flex;
+                    // gap: 0 18px;
+                    height: 60px;
+                    align-items: center;
+
+                    mat-icon {
+                        margin: 10px;
+                        width: 34px;
+                        height: 34px;
+                    }
+                }
+            }
+
+
+            .form {
+                max-width: 640px;
+                flex: 1 1 45%;
+                // max-height: 530px;
+                background-color: white;
+                color: black;
+                border-radius: 25px;
+
+                @media screen and (max-width: breakpoint(md)) {
+                    width: 100%;
+
+                }
+
+                form {
+                    margin: 40px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: flex-start;
+                    gap: 5px 21px;
+
+                    mat-form-field {
+                        flex: 1 1 100%;
+
+                        &:nth-child(3),
+                        &:nth-child(4) {
+                            flex: 1 1 45%
+                        }
+
+                        @media screen and (max-width: breakpoint(lg)) {
+
+                            &:nth-child(3),
+                            &:nth-child(4) {
+                                flex: 1 1 100%
+                            }
+                        }
+
+                        ::ng-deep {
+
+                            .mdc-text-field--filled,
+                            .mat-mdc-form-field-focus-overlay,
+                            .mdc-text-field--filled:not(.mdc-text-field--disabled) {
+                                background-color: transparent !important;
+                            }
+                        }
+                    }
+
+                    button {
+                        background-color: $backgroundDarkBlue;
+                        border: none;
+                        border-radius: 4px;
+                        width: 156px;
+                        height: 42px;
+                        text-align: center;
+                        // texto
+                        font-size: 16px;
+                        line-height: 18.4px;
+                        color: white;
+                        margin: 10px 0 0 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .footer {
+        width: 100%;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 27px;
+        padding: 25px 0;
+    }
+}

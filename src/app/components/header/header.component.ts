@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs';
 // import { ModalRedirectHomesComponent } from 'src/app/homes/modal-redirect-homes/modal-redirect-homes.component';
 
 @Component({
@@ -14,7 +15,6 @@ export class HeaderComponent implements OnInit {
   selectedLanguage: any;
 
   constructor(private router: Router, private matDialog: MatDialog) {}
-
   ngOnInit(): void {}
 
   // Añade la clase "active" al botón del menú que coincide con la ruta actual

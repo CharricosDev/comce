@@ -321,18 +321,21 @@ button {
         bottom: 65px;
         right: 20px;
         z-index: 1000;
-        background-color: $primaryColor;
-        border-radius: 50%;
+        background-color: $backgroundIndigo;
+        /* border-radius: 50%; */
         border: none;
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 15px;
+        /* padding: 15px; */
+        height: 46px;
+        width: 46px;
+        transition: all 0.5s ease;
     }
 
     .icon-arrown-white {
-        width: 25px;
-        rotate: -90deg;
+        width: 15px;
+        // rotate: -90deg;
     }
 
 }
@@ -474,7 +477,12 @@ button {
 }
 
 
-
+// Home bar
+.barHome {
+    background-color: $backgroundIndigo;
+    height: 1.4rem;
+    width: 100%;
+}
 
 
 
@@ -700,6 +708,7 @@ button {
     }
 
 
+
     &.mat-focused {
         .mat-form-field-label {
             color: $primaryColor !important
@@ -708,9 +717,24 @@ button {
 
 }
 
+/* Change the white to any color */
 input:-webkit-autofill,
-input:-webkit-autofill:focus {
-    transition: background-color 0s 600000s, color 0s 600000s !important;
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
 }
 
 

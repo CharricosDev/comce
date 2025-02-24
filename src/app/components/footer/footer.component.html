@@ -1,1 +1,83 @@
-<p>footer works!</p>
+<div id="footerHome">
+    <div class="footerContent">
+        <div class="footerContactanos">
+            <div class="information">
+                <h2>¡Contáctanos!</h2>
+                <div class="contact-info">
+                    <div>
+                        <mat-icon svgIcon="email"></mat-icon>
+                        <p>
+                            direcciongeneral&#64;comcetabasco.org
+                        </p>
+                    </div>
+                    <div>
+                        <mat-icon svgIcon="phone"></mat-icon>
+                        <p>993 315 00 00</p>
+                    </div>
+                    <div>
+                        <mat-icon svgIcon="location"></mat-icon>
+                        <p>Calle 6 #124, Col. Espejo 1 86108 Villahermosa, Mexico</p>
+                    </div>
+                </div>
+                <div class="contact-icons">
+                    <mat-icon svgIcon="facebook_circular"></mat-icon>
+                    <mat-icon svgIcon="whatsapp_circular"></mat-icon>
+                    <mat-icon svgIcon="linkedin_circular"></mat-icon>
+                    <mat-icon svgIcon="instagram_circular"></mat-icon>
+                </div>
+            </div>
+            <div class="form">
+                <!-- Formulario de contactos con angular -->
+                <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nombre(s)</mat-label>
+                        <input matInput formControlName="nombre" required>
+                        <!-- <mat-error *ngIf="formulario.controls['nombre'].errors">
+                            El nombre es requerido.
+                        </mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Correo Electrónico</mat-label>
+                        <input matInput formControlName="correo" type="email" required>
+                        <!-- <mat-error *ngIf="formulario.controls['correo'].errors">
+                            Por favor, introduce un correo electrónico válido.
+                        </mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Teléfono</mat-label>
+                        <input matInput formControlName="telefono" type="tel" required>
+                        <!-- <mat-error *ngIf="formulario.controls['telefono'].errors">
+                            El teléfono es requerido.
+                        </mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Empresa</mat-label>
+                        <input matInput formControlName="empresa" required>
+                        <!-- <mat-error *ngIf="formulario.controls['empresa'].errors">
+                            La empresa es requerida.
+                        </mat-error> -->
+                    </mat-form-field>
+
+                    <mat-form-field appearance="fill">
+                        <mat-label>Mensaje</mat-label>
+                        <textarea matInput rows="4" formControlName="mensaje" required></textarea>
+                        <!-- <mat-error *ngIf="formulario.controls['mensaje'].errors">
+                            El mensaje es requerido.
+                        </mat-error> -->
+                    </mat-form-field>
+
+                    <button mat-raised-button color="primary" type="submit"
+                        [disabled]="formulario.invalid">Enviar</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer">
+            © 2025 Copyright | COMCE Tabasco
+        </div>
+    </div>
+
+    <div class="barHome"></div>
+</div>

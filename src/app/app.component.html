@@ -4,8 +4,7 @@
 
 <!-- boton para regresar al principio -->
 <div class="cont-btn-general">
-    <button (click)="scrollToTop()" #scrollToTopBtn id="scrollToTopBtn" [class.d-none]="!overTheTop"
-        class="animate__fadeInRight  animate__animated">
-        <img src="../../assets/home/icon_arrow_next_white.svg" alt="" class="icon-arrown-white">
+    <button id="scrollToTopBtn" [@slideInOut]="buttonState" (click)="scrollToTop()">
+        <img src="../assets/icons/svg/upHomeBtn.svg" alt="" class="icon-arrown-white">
     </button>
 </div>

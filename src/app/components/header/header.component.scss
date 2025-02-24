@@ -12,12 +12,6 @@
     // overflow: hidden;
     // align-items: center;
 
-    .barHead {
-        background-color: $backgroundIndigo;
-        height: 1.4rem;
-        width: 100%;
-    }
-
     .content-menu {
         max-width: 1200px;
         width: 100%;
@@ -75,6 +69,11 @@
             transition: all 0.5s ease;
             border-radius: 50%;
             // z-index: 2;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
 
             &:hover {
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -171,6 +170,8 @@
         height: 72px;
         border-bottom: 1px solid #ffffffb0;
         position: relative;
+        display: flex;
+        align-items: center;
 
         a {
             font-size: 59px;
@@ -188,7 +189,7 @@
         flex-direction: column;
         align-items: flex-start;
         padding: 4rem 3rem;
-        row-gap: 23px;
+        row-gap: 23px !important;
 
 
         // Boton de menu

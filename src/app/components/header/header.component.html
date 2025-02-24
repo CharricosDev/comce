@@ -1,28 +1,28 @@
 <div id="menu-header-home">
-    <div class="barHead"></div>
+    <div class="barHome"></div>
     <div class="content-menu">
         <div class="cont-log" routerLink="/">
             <img src="../../../assets/header/comce-tab.png" alt="" class="charri-logo-header">
         </div>
 
         <div class="cont-menu-home d-none d-lg-flex">
-            <a class="btn-menu-home" routerLink="/family" routerLinkActive="active" id="family">
+            <a class="btn-menu-home" routerLink="/" fragment="ourAbout" routerLinkActive="active">
                 Nosotros
             </a>
-            <a class="btn-menu-home" routerLink="/products" routerLinkActive="active">
+            <a class="btn-menu-home" routerLink="/" fragment="servicios" routerLinkActive="active">
                 Servicios
             </a>
-            <a class="btn-menu-home" routerLink="/products/recipes" routerLinkActive="active">
+            <a class="btn-menu-home" routerLink="/" fragment="noticias" routerLinkActive="active">
                 Noticias
             </a>
-            <a class="btn-menu-home" routerLink="/contact" routerLinkActive="active">
+            <a class="btn-menu-home" routerLink="/" fragment="contacto" routerLinkActive="active">
                 Contacto
             </a>
         </div>
 
         <div class="header-buttons d-none d-lg-flex gap-2">
             <button class="btn gap-2">
-                ¡Contactanos! <mat-icon svgIcon="whatsapp"></mat-icon>
+                ¡Contáctanos! <mat-icon svgIcon="whatsapp"></mat-icon>
             </button>
 
             <button class="btn-transparent btnLarge">
@@ -32,7 +32,9 @@
         </div>
 
         <div class="d-lg-none">
-            <button class="btn-menu-desplegable" (click)="openNav()"></button>
+            <button class="btn-menu-desplegable" (click)="openNav()">
+                <mat-icon svgIcon="menu_icon"></mat-icon>
+            </button>
         </div>
 
     </div>
@@ -42,7 +44,33 @@
     <div class="header">
         <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
     </div>
-    <div class="body">
+    <div class="body content-menu gap-5">
+
+        <div class="header-buttons d-grid gap-2">
+            <button class="btn gap-2">
+                ¡Contáctanos! <mat-icon svgIcon="whatsapp"></mat-icon>
+            </button>
+
+            <button class="btn-transparent btnLarge">
+                ES
+            </button>
+
+        </div>
+
+        <div class="cont-menu-home d-flex flex-direction-column flex-wrap gap-4">
+            <a class="btn-menu-home" routerLink="/" fragment="ourAbout" routerLinkActive="active">
+                Nosotros
+            </a>
+            <a class="btn-menu-home" routerLink="/" fragment="servicios" routerLinkActive="active">
+                Servicios
+            </a>
+            <a class="btn-menu-home" routerLink="/" fragment="noticias" routerLinkActive="active">
+                Noticias
+            </a>
+            <a class="btn-menu-home" routerLink="/" fragment="contacto" routerLinkActive="active">
+                Contacto
+            </a>
+        </div>
 
 
 

@@ -18,6 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ExperienceComponent } from './home/components/experience/experience.component';
 import { AboutUsComponent } from './home/components/about-us/about-us.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,9 @@ import { FooterComponent } from './components/footer/footer.component';
     BrowserAnimationsModule,
     MatIconModule,
     MatInputModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    MatIconModule,
   ],
   providers: [provideAnimations()],
   bootstrap: [AppComponent],
