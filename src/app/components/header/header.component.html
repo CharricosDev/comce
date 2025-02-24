@@ -58,16 +58,16 @@
         </div>
 
         <div class="cont-menu-home d-flex flex-direction-column flex-wrap gap-4">
-            <a class="btn-menu-home" routerLink="/" fragment="ourAbout" routerLinkActive="active">
+            <a class="btn-menu-home" routerLink="/" (click)="closeNav()" fragment="AbourUs" routerLinkActive="active">
                 Nosotros
             </a>
-            <a class="btn-menu-home" routerLink="/" fragment="servicios" routerLinkActive="active">
+            <a class="btn-menu-home" routerLink="/" (click)="closeNav()" fragment="servicios" routerLinkActive="active">
                 Servicios
             </a>
-            <a class="btn-menu-home" routerLink="/" fragment="noticias" routerLinkActive="active">
+            <a class="btn-menu-home" routerLink="/" (click)="closeNav()" fragment="noticias" routerLinkActive="active">
                 Noticias
             </a>
-            <a class="btn-menu-home" routerLink="/" fragment="contacto" routerLinkActive="active">
+            <a class="btn-menu-home" routerLink="/" (click)="closeNav()" fragment="ContactUs" routerLinkActive="active">
                 Contacto
             </a>
         </div>
